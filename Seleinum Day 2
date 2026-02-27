@@ -16,7 +16,7 @@ public class Assinment {
 		browser.get(url);
 		Thread.sleep(5000);
 		WebElement logo = browser.findElement(By.xpath("(//a[@class=\"hrefch\"])[1]"));
-		browser.findElement(By.linkText("Nexus 6")).click();
+		//browser.findElement(By.linkText("Nexus 6")).click();
 		System.out.println(logo.getText());
 		logo.click();
 		Thread.sleep(5000);
