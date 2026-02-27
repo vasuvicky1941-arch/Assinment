@@ -1,0 +1,27 @@
+Get the text of "Samsung Galaxy S6" and print
+
+package webpractice;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Assinment {
+
+	public static void main(String[] args) throws InterruptedException {
+		String url =  "https://www.demoblaze.com/";
+		WebDriver browser = new ChromeDriver();
+		browser.manage().window().maximize();
+		browser.get(url);
+		Thread.sleep(5000);
+		WebElement logo = browser.findElement(By.xpath("(//a[@class=\"hrefch\"])[1]"));
+		browser.findElement(By.linkText("Nexus 6")).click();
+		System.out.println(logo.getText());
+		logo.click();
+		Thread.sleep(5000);
+		WebElement addToCart = browser.findElement(By.xpath("//a[@onclick=\"addToCart(1)\"]"));
+		addToCart.click();
+		browser.close();
+	}
+}
