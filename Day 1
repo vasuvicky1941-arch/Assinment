@@ -1,0 +1,10 @@
+1. Write possible CSS Selector and XPath for "Click Me" button in following page:
+  CSS Selector :
+  class : .btn-primary
+  Attribute : button[onclick="showDiv()"]
+            :li~li
+Xpath :
+   1. //button[@onclick="showDiv()"]
+   2. //button[text()="Click Me"]
+   3. //button[@type="button" and @onclick="showDiv()"]
+  
