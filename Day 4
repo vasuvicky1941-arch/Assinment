@@ -1,0 +1,26 @@
+1. In the above given site click "New Browser window" and focus to the new window
+
+import java.util.Set;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Assinment2 {
+
+	public static void main(String[] args) {
+	
+		String url = "https://vinothqaacademy.com/multiple-windows/\r\n";
+		WebDriver driver = new ChromeDriver();
+		driver.get(url);
+				String parent = driver.getWindowHandle();
+				driver.findElement(By.cssSelector("[onclick='newBrwWin()']")).click();
+				Set<String> handles = driver.getWindowHandles();
+				
+				for (String handle : handles) {
+					if(!handle.equals(parent)) {
+						driver.switchTo().window(handle);	
+					}
+				}
+	}
+}
