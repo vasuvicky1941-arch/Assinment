@@ -1,0 +1,45 @@
+Handle the normal alert and prompt alert in this page.
+Normal Alert :
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class SampleTest {
+
+	public static void main(String[] args) {
+		 
+	    /*String url = "https:www.tutorialspoint.com/selenium/practice/alerts.php";
+		WebDriver driver = new ChromeDriver();
+		driver.get(url);
+		driver.findElement(By.cssSelector("button[onclick='showAlert()']")).click();
+		Alert popup = driver.switchTo().alert();
+		Thread.sleep(1000);
+		System.out.println(popup.getText());
+	    popup.dismiss();
+
+Prompt Alert :
+ import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class demoalertpopup {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		 String url =  "https://www.tutorialspoint.com/selenium/practice/alerts.php";
+		 WebDriver driver = new ChromeDriver();
+         driver.get(url);
+ 
+         driver.findElement(By.cssSelector("button[onclick=\"myPromp()\"]")).click();
+         Alert popup = driver.switchTo().alert();
+         popup.sendKeys("hello");
+         popup.accept();
+         driver.close();
+	}
+}
+
