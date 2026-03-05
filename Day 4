@@ -24,3 +24,21 @@ public class Assinment2 {
 				}
 	}
 }
+2.Navigate to above site, type into the text box after clicking "Click Me to view textbox" button
+
+public class Assinment2 {
+
+	public static void main(String[] args) throws InterruptedException {
+	
+		String url = "https://vinothqaacademy.com/wait-statement/";
+		WebDriver driver = new ChromeDriver();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		driver.get(url);
+		
+		driver.findElement(By.id("vtsBtn")).click();	
+		//Thread.sleep(1000);
+		driver.findElement(By.id("firstname")).sendKeys("Vicky");	
+						
+	}	
+}
+
