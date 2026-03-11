@@ -1,0 +1,67 @@
+1. Navigate to the page https://www.tutorialspoint.com/ and take the screenshot after a bit of scroll
+
+import java.io.File;
+import java.io.IOException;
+
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+
+public class AssinmentScreenshot {
+
+	public static void main(String[] args) throws IOException {
+		
+		String path = "C:\\Users\\vignesh v\\eclipse-workspace\\slaprojectselenium\\Screenshot\\picutre.png";
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://www.tutorialspoint.com/");
+		WebElement src = driver.findElement(By.cssSelector("[class=\"banner banner-green\"]"));
+		Actions mouseActions= new Actions(driver);
+		mouseActions.scrollToElement(src).perform();
+		mouseActions.scrollByAmount(0, 900).perform();	
+		
+		TakesScreenshot screen = (TakesScreenshot) driver;
+		File shot =screen.getScreenshotAs(OutputType.FILE);
+		File dest = new File(path);
+		FileUtils.copyFile(shot,dest);
+		//driver.close();
+	}
+}
+
+
+2. Navigate to https://www.qa-practice.com/ and take screenshot of "Text Input"
+
+package webpractice;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.Random;
+
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class AssinmentElementScreen {
+
+	public static void main(String[] args) throws IOException {
+		
+		String path ="C:\\Users\\vignesh v\\eclipse-workspace\\slaprojectselenium\\Screenshot";
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://www.qa-practice.com/ ");
+		Random rnd = new Random();
+		 int no = rnd.nextInt();
+		 String path1=path+no+".png";
+		 WebElement input = driver.findElement(By.cssSelector("[href=\'/elements/input/simple\']"));
+		 File src = input.getScreenshotAs(OutputType.FILE);
+		 File dest = new File(path1);
+		 FileUtils.copyFile(src, dest);
+
+	}
+}
