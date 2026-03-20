@@ -2,7 +2,10 @@
   CSS Selector :
   class : .btn-primary
   Attribute : button[onclick="showDiv()"]
-            :li~li
+            :.btn 
+            : button[type="button"]
+            : div > button
+            : div >button[onclick="showDiv()"]
 Xpath :
    1. //button[@onclick="showDiv()"]
    2. //button[text()="Click Me"]
